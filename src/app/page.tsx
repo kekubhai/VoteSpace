@@ -41,7 +41,7 @@ export default async function Home() {
                     <Star className="h-4 w-4 text-green-600 fill-green-600" />
                   </div>
                   <p>
-                    <span className="font-semibold">{Math.ceil(Number(servedRequests) / 10)*10}</span>
+<span className="font-semibold">{Math.ceil(Number(servedRequests) / 10)*10}</span>
                   </p>
                 </div>
               </div>
