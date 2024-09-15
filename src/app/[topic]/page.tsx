@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { redis } from "@/lib/redis"
+import ClientPage from "./ClientPage"
 
 interface Pageprops{
     params:{
@@ -22,8 +23,9 @@ const Page = async ({params}:Pageprops)=>{
         }
     }
      await redis.incr("served-requests")
-     return <ClientPage />
+     return <ClientPage topicName={topic} initialData={words} />
 return (
+    
     <p>{params.topic}</p>
 )
 }
