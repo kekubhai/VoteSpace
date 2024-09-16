@@ -3,13 +3,16 @@ import cors from "cors"
 import http from "http"
 import { Server } from "socket.io"
 import { Redis } from "ioredis"
-import "dotenv/config"
+import "dotenv/config";
 
 const app = express()
 app.use(cors())
+const redisConnectionString = process.env.REDIS_CONNECTION_STRING;
 
-const redis = new Redis(process.env.REDIS_CONNECTION_STRING)
-const subRedis = new Redis(process.env.REDIS_CONNECTION_STRING)
+
+
+const redis = new Redis(redisConnectionString);
+const subRedis = new Redis(redisConnectionString);
 
 const server = http.createServer(app)
 const io = new Server(server, {
